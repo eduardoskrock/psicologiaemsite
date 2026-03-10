@@ -2,13 +2,12 @@
    1. VARIÁVEIS E RESET
    ========================================================================== */
 :root {
-    /* Paleta de Cores baseada na nova referência */
-    --primary-green: #0A876B;       /* Verde Esmeralda dos botões e destaques */
-    --primary-green-hover: #086B54; /* Verde mais escuro para hover */
-    --text-dark: #0B132B;           /* Azul marinho bem escuro/preto para títulos */
-    --text-muted: #4B5563;          /* Cinza médio para parágrafos */
-    --bg-white: #FFFFFF;            /* Fundo branco limpo */
-    --bg-light-mint: #EBF7F6;       /* Fundo verde/menta bem claro para quebra de seções */
+    --primary-green: #0A876B;       
+    --primary-green-hover: #086B54; 
+    --text-dark: #0B132B;           
+    --text-muted: #4B5563;          
+    --bg-white: #FFFFFF;            
+    --bg-light-mint: #EBF7F6;       
     --border-color: #E2E8F0;
     
     --border-radius-sm: 8px;
@@ -23,7 +22,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Syne', 'Heebo', 'Inter', sans-serif; /* Fontes sugeridas */
+    font-family: 'Syne', 'Heebo', 'Inter', sans-serif;
 }
 
 body {
@@ -59,14 +58,14 @@ ul {
 }
 
 /* ==========================================================================
-   2. COMPONENTES GERAIS (Botões e Tags)
+   2. COMPONENTES GERAIS
    ========================================================================== */
 .btn {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     padding: 14px 28px;
-    border-radius: var(--border-radius-pill); /* Formato pílula do print */
+    border-radius: var(--border-radius-pill);
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
@@ -107,7 +106,6 @@ section {
     padding: 100px 0;
 }
 
-/* Imagens Responsivas e Sombras */
 .responsive-img {
     max-width: 100%;
     height: auto;
@@ -184,12 +182,11 @@ section {
 }
 
 .hero-content h1 {
-    font-size: 4rem; /* Título gigante como no print */
+    font-size: 4rem;
     letter-spacing: -1px;
     margin-bottom: 24px;
 }
 
-/* Destaque verde no título */
 .hero-content h1 span {
     color: var(--primary-green);
 }
@@ -211,82 +208,10 @@ section {
 }
 
 /* ==========================================================================
-   5. COMO FUNCIONA E RECURSOS (Fundos alternados)
+   5. COMO FUNCIONA
    ========================================================================== */
-
-
-/* ==========================================================================
-   5. RECURSOS (Features) - Layout Dividido
-   ========================================================================== */
-.features {
-    background: var(--bg-white);
-}
-
-.features-container {
-    display: flex;
-    align-items: center; /* Centraliza verticalmente as duas colunas */
-    gap: 80px; /* Espaço generoso entre o texto e os checks */
-}
-
-.features-text-box {
-    flex: 1;
-}
-
-.features-text-box h2 {
-    font-size: 2.5rem;
-    margin-bottom: 32px;
-}
-
-.features-checks-box {
-    flex: 1;
-}
-
-.feature-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Mantém os checks em 2 colunas */
-    gap: 32px 24px; /* Espaçamento entre as linhas e colunas dos checks */
-    margin-bottom: 0; /* Remove a margem extra inferior */
-}
-
-.feature-list li {
-    font-weight: 500;
-    color: var(--text-dark);
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 1rem;
-}
-
-.feature-list .check {
-    color: var(--primary-green);
-    font-weight: 800;
-    font-size: 1.1rem;
-    margin-top: -2px; /* Alinha o check visualmente com o texto */
-}
-
-/* Responsividade Mobile (Adicione dentro do @media max-width: 992px) */
-@media (max-width: 992px) {
-    .features-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 48px;
-    }
-    
-    .feature-list {
-        text-align: left; /* Mantém os checks alinhados à esquerda mesmo no celular */
-    }
-}
-
-/* Responsividade para celulares menores (Adicione dentro do @media max-width: 768px) */
-@media (max-width: 768px) {
-    .feature-list {
-        grid-template-columns: 1fr; /* Transforma os checks em 1 única coluna no celular */
-        gap: 20px;
-    }
-}
-
-   .how-it-works {
-    background: var(--bg-light-mint); /* Fundo menta claro da parte inferior do print */
+.how-it-works {
+    background: var(--bg-light-mint);
 }
 
 .how-it-works h2 {
@@ -322,6 +247,9 @@ section {
     font-size: 1.2rem;
 }
 
+/* ==========================================================================
+   6. RECURSOS (Features)
+   ========================================================================== */
 .features {
     background: var(--bg-white);
 }
@@ -329,39 +257,90 @@ section {
 .features-container {
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 80px;
 }
 
-.features-content {
+.features-text-box {
     flex: 1;
 }
 
-.features-content h2 {
+.features-text-box h2 {
     font-size: 2.5rem;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
+}
+
+.features-checks-box {
+    flex: 1;
 }
 
 .feature-list {
-    margin-bottom: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 32px 24px;
+    margin-bottom: 0;
 }
 
 .feature-list li {
     font-weight: 500;
     color: var(--text-dark);
     display: flex;
-    align-items: center;
-    gap: 8px;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1rem;
 }
 
-.features-image {
-    flex: 1;
+.feature-list .check {
+    color: var(--primary-green);
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-top: -2px;
 }
 
 /* ==========================================================================
-   6. DEPOIMENTO E CASO DE SUCESSO (Problema > Solução > Indagação)
+   7. SEGURANÇA (Cards SVG)
+   ========================================================================== */
+.praticidade-seguranca .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.praticidade-seguranca .card {
+    background: transparent;
+    border: 1.5px solid var(--primary-green);
+    border-radius: var(--border-radius-md);
+    padding: 40px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.praticidade-seguranca .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(10, 135, 107, 0.1);
+}
+
+.praticidade-seguranca .card-icon {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(10, 135, 107, 0.05);
+}
+
+.praticidade-seguranca h3 {
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+/* ==========================================================================
+   8. CASO DE SUCESSO (Depoimento e Indagação)
    ========================================================================== */
 .testimonial-section {
     background: var(--bg-light-mint);
@@ -382,13 +361,12 @@ section {
     margin-bottom: 32px;
 }
 
-/* Indagação destacada seguindo o fluxo solicitado */
 .indagacao {
     font-size: 1.3rem;
     color: var(--primary-green);
     font-weight: 700;
     padding: 24px;
-    background: rgba(10, 135, 107, 0.08); /* Fundo verde super sutil */
+    background: rgba(10, 135, 107, 0.08);
     border-left: 4px solid var(--primary-green);
     border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
     display: inline-block;
@@ -435,11 +413,23 @@ section {
     gap: 16px;
 }
 
-.author-avatar {
-    width: 64px;
-    height: 64px;
+.author-avatar-wrapper {
+    width: 68px;
+    height: 68px;
     border-radius: 50%;
-    background: var(--border-color); /* Pode substituir por tag img no HTML */
+    background: linear-gradient(135deg, var(--primary-green), #00C9E8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+}
+
+.author-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--bg-white);
 }
 
 .author-details strong {
@@ -461,7 +451,6 @@ section {
     gap: 24px;
 }
 
-/* Mockup Simplificado */
 .browser-mockup {
     width: 100%;
     max-width: 400px;
@@ -513,7 +502,7 @@ section {
 }
 
 /* ==========================================================================
-   7. PLANOS (Estilo SaaS Alinhado à Esquerda)
+   9. PLANOS E PREÇOS
    ========================================================================== */
 .pricing {
     background: var(--bg-white);
@@ -541,7 +530,6 @@ section {
     flex-direction: column;
 }
 
-/* Adaptação do Card Destaque para a nova paleta verde/mint */
 .pricing-card.featured {
     background: var(--bg-light-mint);
     border: 2px solid var(--primary-green);
@@ -647,7 +635,6 @@ section {
     font-weight: bold;
 }
 
-/* Tag Recomendado Centralizada */
 .badge-sugerido {
     position: absolute;
     top: -14px;
@@ -664,10 +651,10 @@ section {
 }
 
 /* ==========================================================================
-   8. CONTATO (Formulário WhatsApp)
+   10. CONTATO (Formulário)
    ========================================================================== */
 .contact-section {
-    background: var(--bg-light-mint);
+    background: var(--bg-white);
     padding: 100px 0;
 }
 
@@ -682,6 +669,7 @@ section {
     padding: 48px;
     border-radius: var(--border-radius-md);
     box-shadow: 0 10px 30px rgba(11, 19, 43, 0.05);
+    border: 1px solid var(--border-color);
 }
 
 .form-group {
@@ -716,7 +704,7 @@ section {
 }
 
 /* ==========================================================================
-   9. FOOTER
+   11. FOOTER
    ========================================================================== */
 footer {
     background: var(--bg-white);
@@ -741,7 +729,7 @@ footer {
 }
 
 /* ==========================================================================
-   10. MEDIA QUERIES (Responsividade ajustada)
+   12. MEDIA QUERIES (Responsividade)
    ========================================================================== */
 @media (max-width: 992px) {
     .hero-content h1 { font-size: 3rem; }
@@ -754,6 +742,10 @@ footer {
     }
     
     .hero-buttons { justify-content: center; }
+    
+    .praticidade-seguranca .cards-grid {
+        grid-template-columns: 1fr; 
+    }
     
     .pricing-grid {
         grid-template-columns: 1fr;
@@ -780,6 +772,10 @@ footer {
     
     .steps-grid { grid-template-columns: 1fr; }
     
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+
     .footer-container {
         flex-direction: column;
         gap: 24px;
