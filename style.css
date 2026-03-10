@@ -1,0 +1,802 @@
+/* ==========================================================================
+   1. VARIÁVEIS E RESET
+   ========================================================================== */
+:root {
+    /* Paleta de Cores baseada na nova referência */
+    --primary-green: #0A876B;       /* Verde Esmeralda dos botões e destaques */
+    --primary-green-hover: #086B54; /* Verde mais escuro para hover */
+    --text-dark: #0B132B;           /* Azul marinho bem escuro/preto para títulos */
+    --text-muted: #4B5563;          /* Cinza médio para parágrafos */
+    --bg-white: #FFFFFF;            /* Fundo branco limpo */
+    --bg-light-mint: #EBF7F6;       /* Fundo verde/menta bem claro para quebra de seções */
+    --border-color: #E2E8F0;
+    
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
+    --border-radius-pill: 50px;
+    
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Syne', 'Heebo', 'Inter', sans-serif; /* Fontes sugeridas */
+}
+
+body {
+    background-color: var(--bg-white);
+    color: var(--text-muted);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-dark);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ==========================================================================
+   2. COMPONENTES GERAIS (Botões e Tags)
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 28px;
+    border-radius: var(--border-radius-pill); /* Formato pílula do print */
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: var(--primary-green);
+    color: var(--bg-white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-green-hover);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--border-color);
+    color: var(--text-dark);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+}
+
+.section-subtitle {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--primary-green);
+    display: block;
+    margin-bottom: 12px;
+}
+
+section {
+    padding: 100px 0;
+}
+
+/* Imagens Responsivas e Sombras */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-lg);
+    object-fit: cover;
+}
+
+.shadow-img {
+    box-shadow: 0 20px 40px rgba(11, 19, 43, 0.08);
+}
+
+/* ==========================================================================
+   3. HEADER / NAVBAR
+   ========================================================================== */
+.navbar {
+    background: var(--bg-white);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.logo span {
+    color: var(--primary-green);
+}
+
+.nav-links a {
+    margin: 0 16px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--primary-green);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+.hero {
+    padding: 80px 0 120px;
+    background: var(--bg-white);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 4rem; /* Título gigante como no print */
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+}
+
+/* Destaque verde no título */
+.hero-content h1 span {
+    color: var(--primary-green);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    max-width: 90%;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+}
+
+/* ==========================================================================
+   5. COMO FUNCIONA E RECURSOS (Fundos alternados)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   5. RECURSOS (Features) - Layout Dividido
+   ========================================================================== */
+.features {
+    background: var(--bg-white);
+}
+
+.features-container {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente as duas colunas */
+    gap: 80px; /* Espaço generoso entre o texto e os checks */
+}
+
+.features-text-box {
+    flex: 1;
+}
+
+.features-text-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 32px;
+}
+
+.features-checks-box {
+    flex: 1;
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Mantém os checks em 2 colunas */
+    gap: 32px 24px; /* Espaçamento entre as linhas e colunas dos checks */
+    margin-bottom: 0; /* Remove a margem extra inferior */
+}
+
+.feature-list li {
+    font-weight: 500;
+    color: var(--text-dark);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1rem;
+}
+
+.feature-list .check {
+    color: var(--primary-green);
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-top: -2px; /* Alinha o check visualmente com o texto */
+}
+
+/* Responsividade Mobile (Adicione dentro do @media max-width: 992px) */
+@media (max-width: 992px) {
+    .features-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 48px;
+    }
+    
+    .feature-list {
+        text-align: left; /* Mantém os checks alinhados à esquerda mesmo no celular */
+    }
+}
+
+/* Responsividade para celulares menores (Adicione dentro do @media max-width: 768px) */
+@media (max-width: 768px) {
+    .feature-list {
+        grid-template-columns: 1fr; /* Transforma os checks em 1 única coluna no celular */
+        gap: 20px;
+    }
+}
+
+   .how-it-works {
+    background: var(--bg-light-mint); /* Fundo menta claro da parte inferior do print */
+}
+
+.how-it-works h2 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 56px;
+}
+
+.step {
+    background: var(--bg-white);
+    padding: 40px 32px;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 10px 30px rgba(10, 135, 107, 0.05);
+}
+
+.step-number {
+    width: 48px;
+    height: 48px;
+    background: var(--bg-light-mint);
+    color: var(--primary-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.features {
+    background: var(--bg-white);
+}
+
+.features-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.features-content {
+    flex: 1;
+}
+
+.features-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+}
+
+.feature-list {
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.feature-list li {
+    font-weight: 500;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.features-image {
+    flex: 1;
+}
+
+/* ==========================================================================
+   6. DEPOIMENTO E CASO DE SUCESSO (Problema > Solução > Indagação)
+   ========================================================================== */
+.testimonial-section {
+    background: var(--bg-light-mint);
+}
+
+.testimonial-header {
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.testimonial-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.testimonial-header p {
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+}
+
+/* Indagação destacada seguindo o fluxo solicitado */
+.indagacao {
+    font-size: 1.3rem;
+    color: var(--primary-green);
+    font-weight: 700;
+    padding: 24px;
+    background: rgba(10, 135, 107, 0.08); /* Fundo verde super sutil */
+    border-left: 4px solid var(--primary-green);
+    border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+    display: inline-block;
+}
+
+.testimonial-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: var(--bg-white);
+    padding: 48px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 15px 35px rgba(11, 19, 43, 0.06);
+}
+
+.testimonial-card {
+    flex: 1;
+    position: relative;
+}
+
+.quote-mark {
+    font-size: 6rem;
+    color: var(--bg-light-mint);
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    line-height: 1;
+    font-family: serif;
+    z-index: 0;
+}
+
+.quote-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.author-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--border-color); /* Pode substituir por tag img no HTML */
+}
+
+.author-details strong {
+    display: block;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+.author-details span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.reference-site {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Mockup Simplificado */
+.browser-mockup {
+    width: 100%;
+    max-width: 400px;
+    background: var(--bg-white);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.browser-header {
+    background: #F8FAFC;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot.red { background: #FF5F56; }
+.dot.yellow { background: #FFBD2E; }
+.dot.green { background: #27C93F; }
+
+.url-bar {
+    background: var(--bg-white);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-left: 12px;
+    flex-grow: 1;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.browser-body {
+    height: 250px;
+    background: var(--bg-light-mint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+.site-link-btn {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* ==========================================================================
+   7. PLANOS (Estilo SaaS Alinhado à Esquerda)
+   ========================================================================== */
+.pricing {
+    background: var(--bg-white);
+}
+
+.pricing .subtitle {
+    margin-bottom: 56px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+.pricing-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 40px 32px;
+    text-align: left;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adaptação do Card Destaque para a nova paleta verde/mint */
+.pricing-card.featured {
+    background: var(--bg-light-mint);
+    border: 2px solid var(--primary-green);
+    box-shadow: none;
+}
+
+.plan-category {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.pricing-card.featured .plan-category {
+    color: var(--primary-green);
+}
+
+.pricing-card h3 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.plan-desc {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+    min-height: 44px;
+}
+
+.price-wrap {
+    display: flex;
+    align-items: flex-start;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.currency {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 6px;
+    margin-right: 4px;
+}
+
+.price-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.period {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    align-self: flex-end;
+    margin-bottom: 6px;
+    margin-left: 4px;
+}
+
+.billing-info {
+    font-size: 0.85rem;
+    margin-bottom: 32px;
+}
+
+.btn-block {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.plan-features {
+    flex-grow: 1;
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+}
+
+.pricing-card.featured .plan-features {
+    border-top-color: rgba(10, 135, 107, 0.2);
+}
+
+.feature-heading {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 16px 0 12px;
+}
+
+.plan-features ul {
+    margin-bottom: 24px;
+}
+
+.plan-features li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.plan-features .check {
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+/* Tag Recomendado Centralizada */
+.badge-sugerido {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-green);
+    color: var(--bg-white);
+    padding: 6px 18px;
+    border-radius: var(--border-radius-pill);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   8. CONTATO (Formulário WhatsApp)
+   ========================================================================== */
+.contact-section {
+    background: var(--bg-light-mint);
+    padding: 100px 0;
+}
+
+.contact-header {
+    margin-bottom: 48px;
+}
+
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--bg-white);
+    padding: 48px;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 10px 30px rgba(11, 19, 43, 0.05);
+}
+
+.form-group {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem;
+    background: var(--bg-white);
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 4px rgba(10, 135, 107, 0.1);
+}
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+footer {
+    background: var(--bg-white);
+    padding: 40px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    margin-left: 24px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    color: var(--primary-green);
+}
+
+/* ==========================================================================
+   10. MEDIA QUERIES (Responsividade ajustada)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .hero-content h1 { font-size: 3rem; }
+    
+    .hero-container, 
+    .features-container, 
+    .testimonial-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-buttons { justify-content: center; }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 40px; 
+    }
+    
+    .feature-list { 
+        text-align: left; 
+    }
+    
+    .quote-mark {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .btn {
+        padding: 12px 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links, .nav-actions { display: none; }
+    .menu-toggle { display: block; }
+    
+    .steps-grid { grid-template-columns: 1fr; }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+    .footer-links a { margin: 0 12px; }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .testimonial-content, .contact-form-container {
+        padding: 32px 24px;
+    }
+}
